@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<!-- BEGIN HTML -->
+<html lang="en" ng-app="tagsApp">
+<!-- BEGIN HEADER -->
+<head>
+	<title>AngularJS Tag Input</title>
+	<link rel="stylesheet" type="text/css" href="css/tags.css">
+</head>
+<!-- END HEADER -->
+<body data-ng-controller="tagsController">
+	
+	<!-- tag input container div -->
+
+	<div class="tag-input-ctn">
+		<!-- div shows all created tags -->
+		<div data-ng-repeat="(key, tag) in inputTags" class="input-tag">
+			{{ tag.name }}
+			<!-- another div with delete icon, here passed the key parameter -->
+			<div class="delete-tag" data-ng-click="deleteTag(key)">&times;</div>
+		</div>
+		
+		<!-- input field together with tagInput directive defined in tags.js -->
+		<!-- using ng-style, dynamically get $scope.inputWidth from tags.js  -->
+		<!-- when call deleteTag, no paramete passed in ==================== -->
+		<!-- bind $scope.tagText using ng-model ============================ -->
+		<input type="text" 
+			data-tag-input="" 
+			data-ng-model="tagText" 
+			data-ng-style="{width: inputWidth}" 
+			data-new-tag="addTag()" 
+			data-delete-tag="deleteTag()">
+
+	</div>
+
+	<!-- Javascript -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+	<script src="js/tags.js"></script>
+</body>
+</html>
+<!-- END HTML -->
+
