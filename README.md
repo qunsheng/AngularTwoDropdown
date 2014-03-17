@@ -1,6 +1,10 @@
 Angular Smart Input
 ==================
 
-Use Angular filter bind two dropdown menus together.
+There examples of smart input using Angular.
 
-Another example is using Angular directive to creating input field with tags.
+1) Use Angular filter bind two dropdown menus together.
+
+2) Use Angular directive to creating input field with tags.
+
+3) Use AmngularUI create google like search input.
